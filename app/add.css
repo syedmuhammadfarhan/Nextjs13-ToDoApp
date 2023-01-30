@@ -1,0 +1,12 @@
+.add {
+    background-color: rgb(86, 198, 243);
+    margin: 10px;
+    border-color: rgb(255, 255, 255);
+    padding-left: 4px;
+    padding-right: 4px;
+    font-style: oblique;
+    font-weight: bolder;
+    color: black;
+    font: 900;
+
+}
