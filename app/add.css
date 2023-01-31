@@ -1,12 +1,14 @@
 .add {
-    background-color: rgb(86, 198, 243);
+    background-color: rgb(116, 211, 248);
     margin: 10px;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
     padding-left: 4px;
     padding-right: 4px;
     font-style: oblique;
     font-weight: bolder;
     color: black;
     font: 900;
+    border-radius: 6px;
+      
 
 }
