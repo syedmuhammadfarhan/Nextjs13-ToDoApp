@@ -47,7 +47,7 @@ export default function Home() {
                   fontStyle: "oblique",
                   fontWeight: "bold",
                   listStyle: "none",
-                  
+
                   listStylePosition: "inside",
                   listStyleType: "none",
                 }}
@@ -63,6 +63,7 @@ export default function Home() {
                     color: "black",
                     fontFamily: "fantasy",
                     borderRadius: "6px",
+
                   }}
                   onClick={() => {
                     deleteinput(e);
