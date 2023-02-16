@@ -2,6 +2,8 @@
 
 import "./add.css";
 import { useState } from "react";
+import { VStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/layout";
 
 export default function Home() {
   const [input, setinput] = useState("");
@@ -26,17 +28,19 @@ export default function Home() {
   };
 
   return (
-    <>
+    <VStack>
       <h1>ToDo App</h1>
-      <input
-        type="text"
-        value={input}
-        placeholder="Add input"
-        onChange={(e) => setinput(e.target.value)}
-      />
-      <button className="add" onClick={addinput}>
-        Add
-      </button>
+      <HStack>
+        <input
+          type="text"
+          value={input}
+          placeholder="Add input"
+          onChange={(e) => setinput(e.target.value)}
+        />
+        <button className="add" onClick={addinput}>
+          Add
+        </button>
+      </HStack>
 
       <ul>
         {add.map((e: any) => {
@@ -47,7 +51,7 @@ export default function Home() {
                   fontStyle: "oblique",
                   fontWeight: "bold",
                   listStyle: "none",
-                  
+
                   listStylePosition: "inside",
                   listStyleType: "none",
                 }}
@@ -75,6 +79,6 @@ export default function Home() {
           }
         })}
       </ul>
-    </>
+    </VStack>
   );
 }
