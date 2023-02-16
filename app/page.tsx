@@ -67,6 +67,7 @@ export default function Home() {
                     color: "black",
                     fontFamily: "fantasy",
                     borderRadius: "6px",
+
                   }}
                   onClick={() => {
                     deleteinput(e);

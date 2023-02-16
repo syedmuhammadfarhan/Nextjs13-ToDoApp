@@ -2,13 +2,16 @@
     background-color: rgb(116, 211, 248);
     margin: 10px;
     border-color: rgb(0, 0, 0);
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
     font-style: oblique;
     font-weight: bolder;
     color: black;
     font: 900;
     border-radius: 6px;
-      
+
 
 }
