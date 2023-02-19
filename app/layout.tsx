@@ -1,4 +1,5 @@
-// import './globals.css'
+'use client';
+import { ChakraProvider } from '@chakra-ui/react'
 
 export default function RootLayout({
   children,
@@ -13,9 +14,9 @@ export default function RootLayout({
       */}
       <head />
       <body >
-        {/* <center > */}
-        {children}
-        {/* </center> */}
+        <ChakraProvider>
+          {children}
+        </ChakraProvider>
       </body>
     </html>
   )
