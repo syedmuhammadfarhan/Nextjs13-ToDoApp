@@ -1,7 +1,5 @@
 "use client";
 import {
-  Container,
-  Box,
   VStack,
   HStack,
   Heading,
@@ -11,7 +9,6 @@ import {
   StackDivider,
   Spacer,
   Text,
-  Badge,
 } from "@chakra-ui/react";
 
 import { FaTrash } from "react-icons/fa";
@@ -61,7 +58,7 @@ export default function Home() {
               <HStack>
                 <input type="checkbox" />
 
-                <Text>{e}</Text>
+                <Text key={e}>{e}</Text>
                 <Spacer />
                 <IconButton
                   icon={<FaTrash />}
