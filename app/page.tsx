@@ -11,6 +11,7 @@ import {
   StackDivider,
   Spacer,
   Text,
+  Badge,
 } from "@chakra-ui/react";
 
 import { FaTrash } from "react-icons/fa";
@@ -21,7 +22,9 @@ export default function Home() {
   const [add, setadd] = useState([""]);
 
   const addinput = () => {
-    if (input !== "") {
+    if (input === add.find((f) => f === input)) {
+      return false;
+    } else {
       const listArr = [...add, input];
       setadd(listArr);
       setinput("");
@@ -41,19 +44,20 @@ export default function Home() {
       <VStack>
         <Heading my={8}>ToDo App</Heading>
       </VStack>
-      <VStack
-        divider={<StackDivider />}
-        borderColor="grey.400"
-        borderWidth={1}
-        p={4}
-        borderRadius={"lg"}
-        width="100%"
-        maxW={{ base: "90vw", sm: "80vw", lg: "50vw", xl: "40vw" }}
-        alignItems="stretch"
-      >
-        {add.map((e: any) => {
-          if (e.length) {
-            return (
+
+      {add.map((e) => {
+        if (e) {
+          return (
+            <VStack
+              divider={<StackDivider />}
+              borderColor="grey.400"
+              borderWidth={1}
+              p={4}
+              borderRadius={"lg"}
+              width="100%"
+              maxW={{ base: "90vw", sm: "80vw", lg: "50vw", xl: "40vw" }}
+              alignItems="stretch"
+            >
               <HStack>
                 <input type="checkbox" />
 
@@ -69,10 +73,10 @@ export default function Home() {
                   Delete
                 </IconButton>
               </HStack>
-            );
-          }
-        })}
-      </VStack>
+            </VStack>
+          );
+        }
+      })}
 
       <VStack>
         <HStack>
