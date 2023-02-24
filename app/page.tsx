@@ -9,6 +9,7 @@ import {
   StackDivider,
   Spacer,
   Text,
+  Box,
 } from "@chakra-ui/react";
 
 import { FaTrash } from "react-icons/fa";
@@ -18,7 +19,8 @@ export default function Home() {
   const [input, setinput] = useState("");
   const [add, setadd] = useState([""]);
 
-  const addinput = () => {
+  const addinput = (e: any) => {
+    e.preventDefault();
     if (input === add.find((f) => f === input)) {
       return false;
     } else {
@@ -49,7 +51,8 @@ export default function Home() {
               divider={<StackDivider />}
               borderColor="grey.400"
               borderWidth={1}
-              p={4}
+              px={2}
+              py={1}
               borderRadius={"lg"}
               width="100%"
               maxW={{ base: "90vw", sm: "80vw", lg: "50vw", xl: "40vw" }}
@@ -58,12 +61,15 @@ export default function Home() {
               <HStack>
                 <input type="checkbox" />
 
-                <Text key={e}>{e}</Text>
+                <Text>{e}</Text>
                 <Spacer />
                 <IconButton
                   icon={<FaTrash />}
                   onClick={() => {
                     deleteinput(e);
+                  }}
+                  _hover={{
+                    bg: "red.200",
                   }}
                   aria-label={""}
                 >
@@ -84,7 +90,14 @@ export default function Home() {
             placeholder="Enter Text"
             onChange={(e: any) => setinput(e.target.value)}
           />
-          <Button colorScheme={"pink"} px="8" onClick={addinput}>
+          <Button
+            colorScheme={"pink"}
+            px="8"
+            onClick={addinput}
+            _hover={{
+              bg: "green.400",
+            }}
+          >
             Add
           </Button>
         </HStack>
